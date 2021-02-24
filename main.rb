@@ -9,14 +9,13 @@ ActiveRecord::Base.establish_connection(
 
   # Specify the CockroachDB ActiveRecord adapter
   adapter:     'cockroachdb',
-  username:    'maxroach',
-  password:    'password',
-  database:    'bank',
-  host:        'localhost',
+  username:    '{user}',
+  password:    '{password}',
+  database:    '{cluster_name}.bank',
+  host:        '{globalhost}',
   port:        26257,
-  sslmode:     'require'
-
-  #sslrootcert: 'certs/ca.crt'
+  sslmode:     'verify-full',
+  sslrootcert: '{path to the CA certificate}'
 )
 # END connect
 
