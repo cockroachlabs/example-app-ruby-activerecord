@@ -9,14 +9,7 @@ ActiveRecord::Base.establish_connection(
 
   # Specify the CockroachDB ActiveRecord adapter
   adapter:     'cockroachdb',
-  username:    'maxroach',
-  password:    'password',
-  database:    'bank',
-  host:        'localhost',
-  port:        26257,
-  sslmode:     'require'
-
-  #sslrootcert: 'certs/ca.crt'
+  url: ENV['DATABASE_URL'].gsub('postgresql://', 'cockroachdb://')
 )
 # END connect
 
