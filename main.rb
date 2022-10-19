@@ -9,7 +9,7 @@ ActiveRecord::Base.establish_connection(
 
   # Specify the CockroachDB ActiveRecord adapter
   adapter:     'cockroachdb',
-  url: ENV['DATABASE_URL'].gsub('postgresql://', 'cockroachdb://')
+  url: ENV['DATABASE_URL'].gsub('postgresql://', 'cockroachdb://').concat('&application_name=docs_simplecrud_activerecord')
 )
 # END connect
 
